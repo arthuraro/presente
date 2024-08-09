@@ -1,0 +1,221 @@
+/* Seu CSS existente */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-image: url("./fundo.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.startPage {
+    text-align: center;
+}
+
+.startPage h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.startPage button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: solid black;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 50px;
+}
+
+.startPage button:hover {
+    background-color: #0056b3;
+}
+
+.giftBox {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: palevioletred;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 30px;
+    animation: giftBoxAnimation 2s infinite;
+}
+
+.lid {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-color: palevioletred;
+    border: 2px solid black;
+    border-radius: 10px 10px 0 0;
+}
+
+.giftBox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 45%;
+    width: 10%;
+    height: 100%;
+    background-color: purple;
+}
+
+.giftBox::after {
+    content: '';
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background-color: purple;
+}
+
+.ribbon {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 40px;
+    height: 20px;
+    background-color: purple;
+    border-radius: 10px;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ribbon::before,
+.ribbon::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: purple;
+    border-radius: 50%;
+}
+
+.ribbon::before {
+    left: -10px;
+}
+
+.ribbon::after {
+    right: -10px;
+}
+
+.knot {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes giftBoxAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .startPage h1 {
+        font-size: 2em;
+    }
+
+    .startPage button {
+        padding: 8px 16px;
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+
+    .giftBox {
+        width: 80px;
+        height: 80px;
+        margin-top: 20px;
+        top: 20px;
+    }
+
+    .lid {
+        height: 16px;
+    }
+
+    .giftBox::before {
+        left: 45%;
+        width: 10%;
+    }
+
+    .giftBox::after {
+        top: 45%;
+        height: 10%;
+    }
+
+    .ribbon {
+        width: 30px;
+        height: 15px;
+    }
+
+    .ribbon::before,
+    .ribbon::after {
+        width: 15px;
+        height: 15px;
+    }
+
+    .knot {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+/* Estilos dos confetes */
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotateZ(360deg);
+        opacity: 0;
+    }
+}
+
+.confetti {
+    position: fixed;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    animation: fall 3s infinite;
+    opacity: 1;
+}
+
+.confetti:nth-child(2) { background-color: blue; }
+.confetti:nth-child(3) { background-color: green; }
+.confetti:nth-child(4) { background-color: yellow; }
+.confetti:nth-child(5) { background-color: purple; }
+
+.confetti:nth-child(2) { width: 8px; height: 8px; }
+.confetti:nth-child(3) { width: 12px; height: 12px; }
+.confetti:nth-child(4) { width: 14px; height: 14px; }
+.confetti:nth-child(5) { width: 6px; height: 6px; }
+
+.confetti:nth-child(2) { animation-duration: 2.5s; }
+.confetti:nth-child(3) { animation-duration: 3.5s; }
+.confetti:nth-child(4) { animation-duration: 4s; }
+.confetti:nth-child(5) { animation-duration: 4.5s; }
