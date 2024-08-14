@@ -257,3 +257,15 @@ button {
 button:hover {
   background-color: #d14ba3;
 }
+
+
+#exemplo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
